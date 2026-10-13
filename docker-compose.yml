@@ -1,0 +1,14 @@
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: novaboard-mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: novaboard
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
